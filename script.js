@@ -3,14 +3,6 @@ const infoBox = document.getElementById('infoBox');
 
 let materiasAprobadas = new Set();
 
-// Al iniciar habilitamos las materias sin prereqs (primeros cuatri y años)
-materias.forEach(m => {
-  if (!m.dataset.prereqs || m.dataset.prereqs.trim() === "") {
-    m.classList.add('habilitada');
-  }
-});
-
-// Función para actualizar las materias habilitadas
 function actualizarHabilitadas() {
   materias.forEach(m => {
     if (materiasAprobadas.has(m.dataset.id)) {
@@ -20,10 +12,10 @@ function actualizarHabilitadas() {
       return;
     }
 
-    // Materia habilitada si todos sus prereqs están aprobados
     const prereqs = m.dataset.prereqs.split(',').filter(x => x.trim() !== "");
     if (prereqs.length === 0) {
       m.classList.add('habilitada');
+      m.style.pointerEvents = 'auto';
     } else {
       const todosAprobados = prereqs.every(id => materiasAprobadas.has(id));
       if (todosAprobados) {
@@ -37,13 +29,12 @@ function actualizarHabilitadas() {
   });
 }
 
-// Click para marcar materia aprobada o desmarcarla
+// Click para marcar materia aprobada
 materias.forEach(m => {
   m.addEventListener('click', () => {
-    if (!m.classList.contains('habilitada')) return; // solo si está habilitada
+    if (!m.classList.contains('habilitada')) return;
 
     const id = m.dataset.id;
-
     if (materiasAprobadas.has(id)) {
       materiasAprobadas.delete(id);
     } else {
@@ -52,7 +43,6 @@ materias.forEach(m => {
     actualizarHabilitadas();
   });
 
-  // Mostrar prerrequisitos al pasar mouse
   m.addEventListener('mouseenter', () => {
     const prereqs = m.dataset.prereqs;
     if (prereqs && prereqs.trim() !== "") {
@@ -61,6 +51,7 @@ materias.forEach(m => {
       infoBox.textContent = "Sin prerrequisitos";
     }
   });
+
   m.addEventListener('mouseleave', () => {
     infoBox.textContent = "Pasa el cursor sobre una materia para ver los prerrequisitos";
   });
