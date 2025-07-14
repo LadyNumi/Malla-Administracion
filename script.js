@@ -56,5 +56,5 @@ materias.forEach(m => {
   });
 });
 
-// Al cargar, habilitar las materias sin prerrequisitos
+// Al cargar la página, habilitar las materias iniciales sin requisitos
 actualizarHabilitadas();
