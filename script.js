@@ -29,7 +29,6 @@ function actualizarHabilitadas() {
   });
 }
 
-// Click para marcar materia aprobada
 materias.forEach(m => {
   m.addEventListener('click', () => {
     if (!m.classList.contains('habilitada')) return;
@@ -57,4 +56,5 @@ materias.forEach(m => {
   });
 });
 
+// Al cargar, habilitar las materias sin prerrequisitos
 actualizarHabilitadas();
