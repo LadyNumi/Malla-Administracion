@@ -1,15 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Malla Interactiva Administración</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malla Interactiva Administración</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Malla Interactiva - Administración</h1>
-    <div id="malla"></div>
+  <h1>Malla Interactiva - Carrera Administración</h1>
 
-    <script src="script.js"></script>
+  <div class="malla-container">
+
+    <!-- Primer año -->
+    <section class="anio">
+      <h2>Primer Año</h2>
+
+      <div class="cuatrimestre">
+        <h3>1° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia habilitada" data-id="1" data-prereqs="">1. Contabilidad básica</div>
+          <div class="materia habilitada" data-id="2" data-prereqs="">2. Derecho constitucional</div>
+          <div class="materia habilitada" data-id="3" data-prereqs="">3. Principios de Administración</div>
+        </div>
+      </div>
+
+      <div class="cuatrimestre">
+        <h3>2° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia habilitada" data-id="4" data-prereqs="">4. Matemática I</div>
+          <div class="materia habilitada" data-id="5" data-prereqs="">5. Historia económica contemporánea</div>
+          <div class="materia habilitada" data-id="6" data-prereqs="">6. Metodología de las ciencias sociales</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Segundo año -->
+    <section class="anio">
+      <h2>Segundo Año</h2>
+
+      <div class="cuatrimestre">
+        <h3>1° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="10" data-prereqs="4">10. Matemática II</div>
+          <div class="materia" data-id="9" data-prereqs="2">9. Derecho civil</div>
+          <div class="materia" data-id="8" data-prereqs="3">8. Organización y Estructuras</div>
+          <div class="materia" data-id="7" data-prereqs="3">7. Tecnologías de la Información y Comunicación</div>
+        </div>
+      </div>
+
+      <div class="cuatrimestre">
+        <h3>2° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="13" data-prereqs="4,5">13. Introducción a la economía</div>
+          <div class="materia" data-id="11" data-prereqs="6,8">11. Comportamiento organizacional</div>
+          <div class="materia" data-id="12" data-prereqs="1">12. Técnicas de valuación</div>
+          <div class="materia" data-id="14" data-prereqs="7,8">14. Sistemas de información</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tercer año -->
+    <section class="anio">
+      <h2>Tercer Año</h2>
+
+      <div class="cuatrimestre">
+        <h3>1° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="16" data-prereqs="10">16. Matemática financiera</div>
+          <div class="materia" data-id="17" data-prereqs="9">17. Derecho comercial I</div>
+          <div class="materia" data-id="15" data-prereqs="13">15. Microeconomía</div>
+          <div class="materia" data-id="18" data-prereqs="8">18. Procedimientos Administrativos</div>
+        </div>
+      </div>
+
+      <div class="cuatrimestre">
+        <h3>2° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="19" data-prereqs="14,11">19. Administración Estratégica</div>
+          <div class="materia" data-id="20" data-prereqs="17">20. Derecho del trabajo y la seguridad social</div>
+          <div class="materia" data-id="21" data-prereqs="10">21. Estadísticas</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuarto año -->
+    <section class="anio">
+      <h2>Cuarto Año</h2>
+
+      <div class="cuatrimestre">
+        <h3>1° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="22" data-prereqs="1,8">22. Sistemas de costos</div>
+          <div class="materia" data-id="23" data-prereqs="15">23. Macroeconomía</div>
+          <div class="materia" data-id="24" data-prereqs="11,14,20">24. Administración de Recursos Humanos</div>
+          <div class="materia" data-id="25" data-prereqs="9">25. Derecho Administrativo</div>
+        </div>
+      </div>
+
+      <div class="cuatrimestre">
+        <h3>2° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="26" data-prereqs="12,22">26. Costos para la toma de decisiones</div>
+          <div class="materia" data-id="27" data-prereqs="21,23,25">27. Finanzas públicas</div>
+          <div class="materia" data-id="29" data-prereqs="21">29. Investigación Operativa</div>
+          <div class="materia" data-id="28" data-prereqs="18,19,21">28. Marketing</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quinto año -->
+    <section class="anio">
+      <h2>Quinto Año</h2>
+
+      <div class="cuatrimestre">
+        <h3>1° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="30" data-prereqs="17">30. Derecho Comercial II</div>
+          <div class="materia" data-id="31" data-prereqs="14,26,29">31. Administración de la Producción</div>
+          <div class="materia" data-id="32" data-prereqs="23">32. Coyuntura Económica</div>
+          <div class="materia" data-id="33" data-prereqs="16,26">33. Administración Financiera</div>
+        </div>
+      </div>
+
+      <div class="cuatrimestre">
+        <h3>2° Cuatrimestre</h3>
+        <div class="materias-grid">
+          <div class="materia" data-id="34" data-prereqs="24,28,31,33">34. Seminario de planeamiento y evaluación de proyectos</div>
+          <div class="materia" data-id="35" data-prereqs="23">35. Seminario de Dirección general</div>
+          <div class="materia" data-id="36" data-prereqs="8,27">36. Administración del Sector Público</div>
+          <div class="materia" data-id="37" data-prereqs="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36">37. Práctica Profesional Supervisada (P.P.S)</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="infoBox" class="infoBox">Pasa el cursor sobre una materia para ver los prerrequisitos</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
